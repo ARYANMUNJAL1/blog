@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <h1>All Blogs are Here</h1>
+    <a href="/blogs/new">Click to add new Blogs</a>
+    <ul>
+        <% for(let i of Blog) { %> 
+            <li>
+                <strong id="names"> <%= i.username %> - </strong> <br>
+                &emsp; &emsp; &emsp; <%= i.blog %>
+
+                <br><br>
+                <a href="/blogs/<%=i.id%>">Show info</a> &nbsp;
+                <a href="/blogs/<%=i.id%>/edit">Edit Blog</a> &nbsp;
+                <form action="/blogs/<%=i.id%>?_method=DELETE" method="POST">
+                    <br><button type="submit">Delete Blog</button>
+                </form>
+            </li>
+        <% } %>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <h1> Edit a Blog </h1>
+
+    <form action="/blogs/<%=getBlog.id%>?_method=PATCH" method="POST" id="new-form">
+        <label for="username">Username: </label>
+        <input type="text" name="username" value="<%=getBlog.username%>" id="username" placeholder="Enter your name...">
+
+        <br><br>
+        <label for="blog">Blog: </label>
+        <textarea name="blog" id="blog" cols="40" rows="7" placeholder="Write your blog..."><%=getBlog.blog%></textarea>
+
+        <br><br>
+        <button type="submit">Change</button>
+    </form>
+
+</body>
+</html>
